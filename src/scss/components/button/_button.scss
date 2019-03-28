@@ -1,0 +1,24 @@
+@each $name, $color in $button-types {
+    .button__#{$name} {
+        @include make-button($bg: $color, $border-width: 2px, $border-color: $button-color, $border-rad: 5px);
+
+        //для разного цвета текста при наличии и отсутствии цвета фона
+        @if($name == full){
+            color: $white-color;
+        } @else {
+            color: $button-color;
+        }
+
+        @include button-size(10px, 20px);
+
+        transition: $trans-time-md;
+
+        &:hover {
+            background: $active-color;
+
+            @if($name == empty){
+                color: $white-color;
+            } 
+        }
+    }
+}

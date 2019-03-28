@@ -1,0 +1,21 @@
+//for absolute position before/after elem
+
+@mixin position-from-bottom($left:0, $bottom: 0,$cent-x: false, $cent-y: false ){
+    left: $left;
+    bottom: $bottom;
+    
+    @if($cent-x == true){
+        transform: translateX(-50%);
+    }
+    @if($cent-y == true){
+        transform: translateY(-50%);
+    }
+}
+
+@mixin after-position-absolute($height:0, $width:0, $bg: transparent, $content: ''){
+    content: $content;
+    position: absolute;
+    width: $width;
+    height: $height;
+    background: $bg;
+}

@@ -1,0 +1,112 @@
+.feature {
+
+    @include make-container();
+    @include make-container-max-widths();
+
+    padding-top: 100px;
+
+    &__title {
+        text-align: center;
+        font-weight: 700;
+        margin-bottom: 0.5em;
+    }
+
+    &__intro {
+        text-align: center;
+        max-width: 475px;
+        margin: 0 auto;
+        line-height: $line-height;
+        padding-bottom: 1.25em;
+        position: relative;
+        margin-bottom: 80px;
+
+        &::after {
+            @include after-position-absolute(2px,130px, $active-color);
+            @include position-from-bottom($left:50%, $bottom: 0,$cent-x: true);
+        }
+
+    }
+
+    //styles for feature navigation
+
+    &__nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        //768-992px
+        @include media-breakpoint-only(md){
+            margin: 0 -15px;
+        }
+
+        //<768px
+        @include media-breakpoint-down(sm) {
+            flex-direction: column;
+            margin-top: -30px;
+        }
+
+        &-item {
+            font-weight: 700;
+            line-height: $line-height;
+            transition: $trans-time-md;
+            text-transform: uppercase;
+            cursor: pointer;
+            display: block;
+            padding: 10px 20px;
+
+            @include media-breakpoint-only(md){
+                text-align: center;
+            }
+
+
+            &:hover {
+                color: $active-color;
+            }
+        }
+    }
+
+    //styles for image block
+
+    &__images {
+        //make row
+        @include make-row();
+    }
+
+    &__image {
+
+        &-block{
+            
+            //make col size
+            @include make-col(3);
+            height: 290px;
+            margin: 20px 0;
+
+            @include media-breakpoint-only(md){
+                @include make-col(4);
+            }
+
+            @include media-breakpoint-only(sm){
+                @include make-col(6);
+            }
+
+            @include media-breakpoint-only(xs){
+                @include make-col(12);
+            }
+
+        }
+
+        &-picture {
+            padding: 10px 20px;
+            height: 100%;
+        }
+
+        &-item {
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: $light-color;
+            cursor: pointer;
+        }
+    }
+
+}

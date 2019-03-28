@@ -1,0 +1,132 @@
+.provide{
+
+    //make container
+    @include make-container();
+    @include make-container-max-widths();
+
+    padding-top: 110px;
+    padding-bottom: 100px;
+    border-bottom: 2px solid #ececec;
+
+    //make row
+    &__content {
+        @include make-row();
+    }
+
+    //styles for title, text and button
+    &__text-block {
+        @include make-col(5);
+
+        //<992px
+        @include media-breakpoint-down(md){
+            @include make-col(12);
+        }
+    }
+
+    &__title {
+        font-weight: 700;
+        line-height: $line-height;
+        margin-bottom: 55px;
+
+        //<992px
+        @include media-breakpoint-down(md){
+            text-align: center;
+        }
+    }
+
+    &__intro {
+        line-height: $line-height;
+        margin-bottom: 55px;
+
+        @include media-breakpoint-down(md){
+            text-align: center;
+        }
+    }
+
+    &__button {
+        width: 225px;
+        @include media-breakpoint-down(md){
+            margin:  0 auto 55px;
+        }
+    }
+
+    //styles for card part of the section
+
+    &__cards {
+
+        //make column for card block
+        @include make-col-offset(1);
+        @include make-col(6);
+
+        @include media-breakpoint-down(md){
+            @include make-col-offset(0);
+            @include make-col(12);
+        }
+
+        &-wrapper {
+
+            //make row for card
+            @include make-row(0);
+        }
+    }
+
+    //styles for card item
+
+    &__card {
+        @include make-col(6);
+
+        padding-top: 15px;
+        padding-left: 30px;
+        margin-bottom: 40px;
+
+        //styles for medium(768-992px)
+
+        @include media-breakpoint-only(md){
+            padding-left: 0;
+
+            &:nth-of-type(odd){
+                padding-right: 50px;
+            }
+
+            &:nth-of-type(even){
+                padding-left: 50px;
+            }
+        }
+
+        //<768px
+        @include media-breakpoint-down(sm){
+            @include make-col(12);
+            text-align: center;
+            padding: 0 25px;
+        }
+
+
+        //image block
+        &-picture {
+            margin-bottom: 20px;
+        }
+
+        &-img {
+            width: 44px;
+            height: 33px;
+        }
+
+        //title block
+        &-title {
+            margin-bottom: 10px;
+        }
+
+        //text part
+        &-text {
+            line-height: $line-height;
+            text-align: justify;
+
+            //<768px
+            @include media-breakpoint-down(sm){
+                text-align: center;
+            }
+        }
+
+    }
+
+}

@@ -1,0 +1,23 @@
+.input {
+    outline: none;
+    border: none;
+    color: $dark-color;
+    line-height: $line-height;
+    font-family: $font-family;
+
+    &:focus {
+        outline: none;
+        border: none;
+    }
+
+    &:active {
+        outline: none;
+        border: none;
+    }
+
+    &::placeholder {
+        color: $dark-color;
+        line-height: $line-height;
+        font-family: $font-family;
+    }
+}

@@ -1,0 +1,94 @@
+.intro {
+    @include make-container();
+    @include make-container-max-widths();
+
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    //make row
+
+    &__content {
+        @include make-row();
+    }
+
+    //make col with text content
+
+    &__info {
+        @include make-col(6);
+        
+        //media < 768px
+        @include media-breakpoint-down(sm){
+            @include make-col(12);
+            padding: 0 15px;
+        }
+    }
+
+    //styles block with text
+
+    &__title {
+        text-transform: uppercase;
+        font-weight: 700;
+
+        @include media-breakpoint-down(lg){
+            font-size: 50px;
+        }
+        //media < 992px
+        @include media-breakpoint-down(md){
+            font-size: 40px;
+        }
+        //media < 768px
+        @include media-breakpoint-down(sm){
+           text-align: center;
+           word-wrap: break-word;
+        }
+    }
+
+    &__text {
+        margin-top: 1em;
+        text-align: justify;
+        line-height: 1.75;
+
+        //media < 992px
+        @include media-breakpoint-down(lg){
+            padding-right: 20px; 
+        }
+        //media < 768px
+        @include media-breakpoint-down(sm){
+            text-align: center;
+            padding-right: 0; 
+        }
+    }
+
+    &__button {
+        width: 225px;
+        margin-top: 2em;
+
+        //media < 768px
+        @include media-breakpoint-down(sm){
+            margin: 2em auto;
+        }
+    }
+
+    //styles for media part of the block
+
+    &__media {
+        @include make-col(6);
+        text-align: center;
+
+        //media < 768px
+        @include media-breakpoint-down(sm){
+            @include make-col(12);
+            padding: 0 15px;
+        }
+    }
+
+    &__video {
+        box-shadow: 7px 12px 73px $black-color;
+        width: 550px;
+        height: 350px;
+
+        @include media-breakpoint-down(lg){
+            width: 100%;
+        }
+    }
+}

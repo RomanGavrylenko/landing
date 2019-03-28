@@ -1,0 +1,80 @@
+$grid-columns:                12 !default;
+$grid-gutter-width:           30px !default;
+
+$grid-breakpoints: (
+  // Extra small screen / phone
+  xs: 0,
+  // Small screen / phone
+  sm: 576px,
+  // Medium screen / tablet
+  md: 768px,
+  // Large screen / desktop
+  lg: 992px,
+  // Extra large screen / wide desktop
+  xl: 1300px
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1250px
+);
+
+
+//colors
+
+$active-color: #ff3f40;
+$dark-color: #312f30;
+$light-color: #f6f2f1;
+
+$button-color: #ff2d2d;
+$contact-input-color: #E5E5E5;
+
+$white-color: #ffffff;
+$black-color: #000000;
+
+$colors:(
+    text-color: #e0e0e0,
+    active-color: #ff3f40,
+);
+
+//fonts 
+
+$font-family: ('Open Sans', 'Times New Roman', sans-serif);
+
+$elem-font-size:(
+  menu: 14px,
+  button: 18px,
+);
+
+$paragraph-size:(
+  par-1: 16px,
+  par-2: 18px,
+  par-3: 22px
+);
+
+$headers-size:(
+  header-1: 60px,
+  header-2: 42px,
+  header-3: 30px,
+  header-4: 24px
+);
+
+//button types
+
+$button-types:(
+  full: $button-color,
+  empty: transparent,
+);
+
+
+//transition-time
+
+$trans-time-sm: 0.3s;
+$trans-time-md: 0.5s;
+$trans-time-lg: 0.8s;
+
+//line-height
+
+$line-height: 1.75;

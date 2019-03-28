@@ -1,0 +1,140 @@
+.contact{
+    @include make-container();
+    @include make-container-max-widths();
+
+    padding-top: 100px;
+    overflow: hidden;
+    //styles for text and title
+
+    &__title {
+        margin-bottom: 1em;
+    }
+
+    &__intro {
+        max-width: 660px;
+        line-height: $line-height;
+        padding-bottom: 55px;
+        position: relative;
+
+        &::after {
+            @include after-position-absolute($height:2px, $width:130px, $bg:$active-color);
+            @include position-from-bottom();
+        }
+    }
+
+    //make row
+
+    &__wrapper {
+        @include make-row();  
+        padding-top: 75px;
+        padding-bottom: 110px;
+    }
+
+    //styles for form
+
+    &__form {
+        @include make-col(7);
+
+        //<992px
+        @include media-breakpoint-down(md){
+            @include make-col(12);
+            padding: 15px;
+        }
+
+
+        //styles for inputs 
+        &-input {
+            background: $contact-input-color;
+            padding: 20px 50px;
+            border-radius: 10px;
+            font-size: 16px;
+            width: 45%;
+            margin-bottom: 40px;
+
+            @include media-breakpoint-down(sm){
+                padding: 20px 10px;
+            }
+
+            &-block {
+                display: flex;
+                justify-content: space-between;
+            }
+            
+            &::placeholder{
+                text-transform: capitalize;
+                line-height: $line-height;
+            }
+        }
+
+        //styles for textarea
+
+        &-message {
+            background: $contact-input-color;
+            font-size: 16px;
+            border-radius: 10px;
+            color: $dark-color;
+            text-align: left;
+            padding: 20px 50px;
+            resize:vertical;
+            min-height: 250px;
+            width: 100%;
+            outline: none;
+            border: none;
+            margin-bottom: 40px;
+        }
+
+
+        &-button {
+            width: 100%;
+            text-transform: uppercase;
+        }
+        
+    } //end form block
+
+    //style for info block
+    &__info {
+        @include make-col-offset(1);
+        @include make-col(4);
+
+
+
+        padding-top: 140px;
+        padding-left: 75px;
+        background: $black-color;
+        position: relative;
+
+
+        //<992px
+        @include media-breakpoint-down(md){
+            @include make-col-offset(0);
+            @include make-col(6);
+
+            margin: 50px auto;
+            padding: 80px 30px;
+        }
+
+        //768px
+        @include media-breakpoint-down(sm){
+            @include make-col-offset(0);
+            @include make-col(8);
+            margin: 50px auto;
+        }
+
+        //568px
+        @include media-breakpoint-down(xs){
+            @include make-col-offset(0);
+            @include make-col(12);
+        }
+
+        &-title {
+            text-transform: uppercase;
+            color: $light-color;
+            margin-bottom: 40px;
+        }
+
+        &-item {
+            color: $light-color;
+            margin-bottom: 1em;
+        }
+    }
+}

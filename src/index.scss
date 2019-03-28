@@ -1,0 +1,28 @@
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+
+@import './scss/variables';
+@import "../node_modules/bootstrap/scss/mixins/breakpoints";
+@import "../node_modules/bootstrap/scss/mixins/grid";
+
+
+@import './scss/mixin';
+@import './scss/components';
+
+@import './scss/parts/header/header';
+@import './scss/parts/intro/intro';
+@import './scss/parts/provide/provide';
+@import './scss/parts/feature/feature';
+@import './scss/parts/team/team';
+@import './scss/parts/subscribe/subscribe';
+@import './scss/parts/contact/contact';
+@import './scss/parts/footer/footer';
+
+
+.top-wrapper {
+    background: $light-color;
+}
+
+
+

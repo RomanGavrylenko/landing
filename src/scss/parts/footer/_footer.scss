@@ -1,0 +1,36 @@
+.footer {
+    @include make-container();
+    @include make-container-max-widths();
+
+    background: $dark-color;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+
+    &__text {
+        color: $light-color;
+    }
+
+    &__icons {
+        display: flex;
+
+       
+        &-link {
+            color: $light-color;
+            font-size: 2em;
+            margin: 0 10px;
+            transition: $trans-time-md;
+
+            &:hover {
+                opacity: 0.5;
+            }
+        }
+
+
+        &-item {
+           border-radius: 50%;
+        }
+    }
+}

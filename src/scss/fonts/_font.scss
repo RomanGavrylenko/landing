@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700');
+
+@each $name, $size in $paragraph-size {
+    .#{$name} {
+        font-size: $size;
+        font-family: $font-family;
+    }
+}
+
+@each $name, $size in $headers-size {
+    .#{$name} {
+        font-size: $size;
+        font-family: $font-family;
+        text-transform: uppercase;
+        font-weight: 700;
+        @if($name == header-4){
+            text-transform: capitalize;
+            font-weight: 400;
+        }
+    }
+}
